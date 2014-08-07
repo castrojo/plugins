@@ -31,13 +31,11 @@ def main():
         print "Collapsed, pretty version of juju stats"
         print ""
         print "Options:"
-        print "  -q  Use quiet (super-condensed) mode"
-        print "  -a  Use aligned mode"
         sys.exit()
 
     quiet = '-q' in sys.argv
 
-    align = not quiet and '-a' in sys.argv
+    align = True
 
     units = get_units()
     name_width, addr_width, stat_width = get_max_lens(units, align)
